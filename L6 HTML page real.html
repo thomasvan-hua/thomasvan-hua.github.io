@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles.css"
+    <script src="form-handler.js" defer></script>
+</head>
+<body>
+  <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>Required fields are marked with an asterisk *</p>
+        <form id="contactForm">
+            <label for="username">* Name:</label>
+            <input type="text" id="username" name="username" required placeholder="Your Name">
+
+            <label for="email">* E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="you@yourdomain.com">
+
+            <label for="gender">* Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+
+            <label for="interests">* Interests:</label>
+            <input type="checkbox" id="sports" name="interests" value="Sports">
+            <label for="sports">Sports</label>
+            <input type="checkbox" id="music" name="interests" value="Music">
+            <label for="music">Music</label>
+            <input type="checkbox" id="art" name="interests" value="Art">
+            <label for="art">Art</label>
+
+            <label for="message">* Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required placeholder="Your message here..."></textarea>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+    </main>
+
+</body>
+</html>
