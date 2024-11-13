@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Accessible Website</title>
+    <style>
+        /* Basic styles for the website */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .audio-container, .image-gallery {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Accessible Website</h1>
+</header>
+
+<div class="container">
+    <!-- Part A: Audio file with controls -->
+    <div class="audio-container">
+        <h2>Audio: "Dish of Destiny"</h2>
+        <audio controls>
+            <source src="Dishofdestiny.mp3" type="audio/mpeg">
+        </audio>
+        <p><strong>Figure 1:</strong> "Dish of Destiny" (Audio file by Thomas Van Hua)</p>
+    </div>
+
+    <!-- Part B: Accessibility buttons to change text size -->
+    <div class="button-container">
+        <button onclick="changeTextSize('increase')">Enlarge Text Size</button>
+        <button onclick="changeTextSize('decrease')">Decrease Text Size</button>
+    </div>
+
+    <!-- Part C: Accessibility button to change text or background colour -->
+    <div class="button-container">
+        <button onclick="changeColorScheme()">Change Colour Scheme</button>
+    </div>
+
+    <!-- Part D: Image gallery with individual buttons for alt-text -->
+    <div class="image-gallery">
+        <h2>Image Gallery</h2>
+
+        <!-- Image 1 with its own alt-text button -->
+        <div>
+            <img src="waterbottle.JPG" alt="blue waterbottle with a black cap and handle">
+            <p><strong>Figure 2:</strong> November 13, 2024/Location: Cafe Login</p>
+            <button onclick="showAltText('image1')">Show Alt-Text for Image 1</button>
+        </div>
+
+        <!-- Image 2 with its own alt-text button -->
+        <div>
+            <img src="hairclip.JPG" alt="brown hairclip">
+            <p><strong>Figure 3:</strong> November 13, 2024/Location: Cafe Login</p>
+            <button onclick="showAltText('image2')">Show Alt-Text for Image 2</button>
+        </div>
+
+        <!-- Image 3 with its own alt-text button -->
+        <div>
+            <img src="phone.JPG" alt="black samsung S21 phone">
+            <p><strong>Figure 4:</strong> November 13, 2024/Location: Cafe Login</p>
+            <button onclick="showAltText('image3')">Show Alt-Text for Image 3</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Part B: Function to change text size (either increase or decrease)
+    function changeTextSize(action) {
+        let body = document.body;
+        let currentSize = window.getComputedStyle(body).fontSize;
+        let newSize;
+
+        // Increase or decrease the font size by 20%
+        if (action === 'increase') {
+            newSize = parseFloat(currentSize) * 1.2; // Increase size by 20%
+        } else if (action === 'decrease') {
+            newSize = parseFloat(currentSize) / 1.2; // Decrease size by 20%
+        }
+        
+        body.style.fontSize = newSize + "px";
+    }
+
+    // Part C: Function to change background or text color
+    function changeColorScheme() {
+        let body = document.body;
+        if (body.style.backgroundColor === 'black') {
+            body.style.backgroundColor = '#f4f4f4'; // Light background
+            body.style.color = 'black'; // Dark text
+        } else {
+            body.style.backgroundColor = 'black'; // Dark background
+            body.style.color = 'white'; // Light text
+        }
+    }
+
+    // Part D: Function to show alt-text for the specific image clicked
+    function showAltText(imageId) {
+        let altText = '';
+        if (imageId === 'image1') {
+            altText = document.querySelector('img[src="waterbottle.JPG"]').alt;
+        } else if (imageId === 'image2') {
+            altText = document.querySelector('img[src="hairclip.JPG"]').alt;
+        } else if (imageId === 'image3') {
+            altText = document.querySelector('img[src="phone.JPG"]').alt;
+        }
+
+        alert("Alt-text: " + altText); // Display alt-text of the respective image
+    }
+</script>
+
+</body>
+</html>
