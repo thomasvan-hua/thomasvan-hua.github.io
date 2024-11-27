@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal CV</title>
+    <style>
+        /* Basic Reset */
+body, h1, h2, p, form, label, input {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+}
+
+/* Container and Page Layout */
+.container {
+    display: flex;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    background-color: #444;
+    border-bottom: 1px solid #666;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.sidebar a:active {
+    background-color: #666;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 220px; /* Add space for sidebar */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.profile h2 {
+    font-size: 24px;
+    color: #777;
+    margin: 5px 0;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Tab Links */
+.tab-content {
+    display: none;
+}
+
+/* Centered Content Styling */
+.centered-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Make the website scrollable */
+html, body {
+    scroll-behavior: smooth;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="#about" id="about-tab">About Me</a>
+        <a href="#work-experience" id="work-tab">Work Experience</a>
+        <a href="#skills" id="skills-tab">Skills</a>
+        <a href="#contact" id="contact-tab">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Landing Profile Section -->
+        <section id="landing" class="profile">
+            <img src="profile.jpg" alt="Profile Picture" /> <!-- Placeholder for your profile image -->
+            <div class="profile-info">
+                <h1>Thomas Hua</h1> <!-- Your Name -->
+                <h2>Consultant</h2> <!-- Job Title -->
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- About Me Section -->
+        <section id="about" class="centered-content">
+            <h2>About Me</h2>
+            <p>I'm Thomas Hua, I am currently in my 4th year of studying Business Technology Management at Toronto Metropolitan University. I specialize in management and operations consulting. I currently am working at Pizza Nova and have about 5 years of working experience.</p>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+                                 
+        <!-- Personal Info Section -->
+        <section id="personal-info" class="centered-content">
+            <h2>Personal Info</h2>
+            <p>Some of my hobbies are playing video games, working out and sports investing. I have a particular
+                interest in fast food operations most likely due to my current occupation of working at a pizza shop franchise.
+            </p>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Work Experience Section -->
+        <section id="work-experience" class="centered-content">
+            <h2>Work Experience</h2>
+            <p>I currently have about 6 years of experience working at Pizza Nova.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="centered-content">
+            <h2>Skills</h2>
+            <p>- Medium knowledge using Python<br>
+                - 6 years of customer service experience<br>
+                - 2 years of Fast Food management experience
+
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="centered-content">
+            <h2>Contact</h2>
+            <p>Email: thomashua44@gmail.com<br>
+                Phone #: 647834720
+            </p>
+        </section>
+    </div>
+
+</body>
+
+</html>
